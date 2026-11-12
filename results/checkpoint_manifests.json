@@ -1,0 +1,692 @@
+{
+  "inclusionAI/Ming-flash-omni-2.0": {
+    "num_safetensors": 53,
+    "num_pt_files": 4,
+    "total_weight_gib": 219.36,
+    "tensor_dtypes_sampled": {
+      "F32": 343,
+      "BF16": 956
+    },
+    "sample_tensors": {
+      "model-00001-of-00002.safetensors:model.embed_tokens.weight": {
+        "shape": [
+          151936,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.input_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.mlp.down_proj.weight": {
+        "shape": [
+          1536,
+          8960
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.mlp.gate_proj.weight": {
+        "shape": [
+          8960,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.mlp.up_proj.weight": {
+        "shape": [
+          8960,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.post_attention_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.self_attn.k_proj.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00002.safetensors:model.layers.0.self_attn.k_proj.weight": {
+        "shape": [
+          256,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.21.input_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.21.mlp.down_proj.weight": {
+        "shape": [
+          1536,
+          8960
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.21.post_attention_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.22.input_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.22.mlp.down_proj.weight": {
+        "shape": [
+          1536,
+          8960
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.22.mlp.gate_proj.weight": {
+        "shape": [
+          8960,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.22.mlp.up_proj.weight": {
+        "shape": [
+          8960,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model-00002-of-00002.safetensors:model.layers.22.post_attention_layernorm.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model.safetensors:proj_in.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model.safetensors:proj_in.weight": {
+        "shape": [
+          1536,
+          4096
+        ],
+        "dtype": "F32"
+      },
+      "model.safetensors:proj_out.bias": {
+        "shape": [
+          2560
+        ],
+        "dtype": "F32"
+      },
+      "model.safetensors:proj_out.weight": {
+        "shape": [
+          2560,
+          1536
+        ],
+        "dtype": "F32"
+      },
+      "model.safetensors:query_tokens_dict.16x16": {
+        "shape": [
+          256,
+          4096
+        ],
+        "dtype": "F32"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.key.weight": {
+        "shape": [
+          1280,
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.out.bias": {
+        "shape": [
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.out.weight": {
+        "shape": [
+          1280,
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.query.bias": {
+        "shape": [
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.query.weight": {
+        "shape": [
+          1280,
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.value.bias": {
+        "shape": [
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn.value.weight": {
+        "shape": [
+          1280,
+          1280
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00042.safetensors:audio.blocks.0.attn_ln.bias": {
+        "shape": [
+          1280
+        ],
+        "dtype": "BF16"
+      }
+    },
+    "configs_found": [
+      "byt5/google__byt5-smal/config.json",
+      "byt5/google__byt5-smal/generation_config.json",
+      "byt5/google__byt5-smal/tokenizer_config.json",
+      "config.json",
+      "connector/config.json",
+      "connector/generation_config.json",
+      "mlp/config.json",
+      "scheduler/scheduler_config.json"
+    ]
+  },
+  "Qwen/Qwen3-Omni-30B-A3B-Thinking": {
+    "num_safetensors": 16,
+    "num_pt_files": 0,
+    "total_weight_gib": 59.08,
+    "tensor_dtypes_sampled": {
+      "BF16": 4973
+    },
+    "sample_tensors": {
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d1.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d1.weight": {
+        "shape": [
+          480,
+          1,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d2.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d2.weight": {
+        "shape": [
+          480,
+          480,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d3.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv2d3.weight": {
+        "shape": [
+          480,
+          480,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.conv_out.weight": {
+        "shape": [
+          1280,
+          7680
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00016.safetensors:thinker.audio_tower.layers.0.fc1.bias": {
+        "shape": [
+          5120
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.input_layernorm.weight": {
+        "shape": [
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.102.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.102.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.103.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.103.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.103.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.104.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00016.safetensors:thinker.model.layers.0.mlp.experts.104.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.input_layernorm.weight": {
+        "shape": [
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.0.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.0.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.0.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.1.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.1.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.1.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00016.safetensors:thinker.model.layers.4.mlp.experts.10.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.0.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.0.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.0.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.1.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.1.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.1.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.10.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00016.safetensors:thinker.model.layers.10.mlp.experts.10.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      }
+    },
+    "configs_found": [
+      "config.json",
+      "generation_config.json",
+      "preprocessor_config.json",
+      "tokenizer_config.json"
+    ]
+  },
+  "Qwen/Qwen3-Omni-30B-A3B-Instruct": {
+    "num_safetensors": 15,
+    "num_pt_files": 0,
+    "total_weight_gib": 65.68,
+    "tensor_dtypes_sampled": {
+      "BF16": 6233
+    },
+    "sample_tensors": {
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d1.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d1.weight": {
+        "shape": [
+          480,
+          1,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d2.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d2.weight": {
+        "shape": [
+          480,
+          480,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d3.bias": {
+        "shape": [
+          480
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv2d3.weight": {
+        "shape": [
+          480,
+          480,
+          3,
+          3
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.conv_out.weight": {
+        "shape": [
+          1280,
+          7680
+        ],
+        "dtype": "BF16"
+      },
+      "model-00001-of-00015.safetensors:thinker.audio_tower.layers.0.fc1.bias": {
+        "shape": [
+          5120
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.input_layernorm.weight": {
+        "shape": [
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.100.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.100.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.100.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.101.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.101.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.101.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00002-of-00015.safetensors:thinker.model.layers.1.mlp.experts.102.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.input_layernorm.weight": {
+        "shape": [
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.100.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.100.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.100.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.101.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.101.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.101.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00003-of-00015.safetensors:thinker.model.layers.5.mlp.experts.102.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.input_layernorm.weight": {
+        "shape": [
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.0.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.0.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.0.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.1.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.1.gate_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.1.up_proj.weight": {
+        "shape": [
+          768,
+          2048
+        ],
+        "dtype": "BF16"
+      },
+      "model-00004-of-00015.safetensors:thinker.model.layers.10.mlp.experts.10.down_proj.weight": {
+        "shape": [
+          2048,
+          768
+        ],
+        "dtype": "BF16"
+      }
+    },
+    "configs_found": [
+      "config.json",
+      "generation_config.json",
+      "preprocessor_config.json",
+      "tokenizer_config.json"
+    ]
+  }
+}

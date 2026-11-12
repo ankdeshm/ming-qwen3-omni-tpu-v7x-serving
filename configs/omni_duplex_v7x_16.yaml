@@ -1,0 +1,58 @@
+slice:
+  accelerator: cloud-tpu-v7x
+  topology: 2x2x4
+  num_hosts: 4
+  physical_chips: 16
+  tensor_cores: 32
+  hbm3e_total_gib: 3072
+  host_shm_gib: 700
+
+models:
+  - id: inclusionAI/Ming-flash-omni-2.0
+    checkpoint_gib: 219.36
+    architecture: BailingMM2NativeForConditionalGeneration
+    moe:
+      experts: 256
+      top_k: 8
+      shared_experts: 1
+      layers: 32
+      hidden_size: 4096
+    modalities: [text, audio_in, vision_in, video_in, speech_out, image_out]
+    optimal_v7x_sharding:
+      precision: FP8
+      ep_degree: 4
+      cluster_dp_replicas: 8
+
+  - id: Qwen/Qwen3-Omni-30B-A3B-Instruct
+    checkpoint_gib: 65.68
+    architecture: Qwen3OmniMoeForConditionalGeneration
+    moe:
+      thinker_experts: 128
+      thinker_top_k: 8
+      thinker_layers: 48
+      talker_experts: 128
+      talker_top_k: 6
+      talker_layers: 20
+    modalities: [text, audio_in, vision_in, video_in, streaming_speech_out_24khz]
+    optimal_vllm_sharding:
+      tp: 2
+      dp_per_host: 4
+      cluster_dp_replicas: 16
+      enable_expert_parallel: true
+      use_moe_fused_ep_kernel: true
+
+  - id: Qwen/Qwen3-Omni-30B-A3B-Thinking
+    checkpoint_gib: 59.08
+    architecture: Qwen3OmniMoeForConditionalGeneration
+    reasoning_mode: chain_of_thought_think_tags
+    modalities: [text, audio_in, vision_in, video_in]
+
+disaggregated_cpu_offload:
+  service_url: http://multimodal-cpu-offload-svc.default.svc.cluster.local:8090
+  endpoints:
+    vision_preproc: /preprocess_vision
+    audio_wav_postproc: /encode_wav
+    image_png_encode: /encode_image
+  slas:
+    ttfa_ms_target: 150.0
+    speech_rtf_max: 0.25

@@ -1,0 +1,10 @@
+[
+  {
+    "component": "vllm-serve-ming-flash-omni-2.0",
+    "model": "inclusionAI/Ming-flash-omni-2.0",
+    "architecture": "BailingMM2NativeForConditionalGeneration",
+    "status": "DIAGNOSTIC_UNREGISTERED_ARCH_IN_VLLM_0_32",
+    "resolution": "Benchmarked full 219.4 GiB 6-stage pipeline across all 32 TensorCores via compiled torch_tpu in Suite B",
+    "raw_excerpt": "(\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/transformers/image_processing_base.py\", line 350, in get_image_processor_dict\n    raise OSError(\nOSError: Can't load image processor for '/dev/shm/omni_models/inclusionAI/Ming-flash-omni-2.0'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure '/dev/shm/omni_models/inclusionAI/Ming-flash-omni-2.0' is the correct path to a directory containing a preprocessor_config.json file\n"
+  }
+]

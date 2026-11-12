@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: omni-v7x16-headless-svc
+  namespace: default
+spec:
+  clusterIP: None
+  selector:
+    app: omni-v7x16-serving
+  ports:
+    - name: agent
+      port: 19120
+    - name: vllm
+      port: 19484
+    - name: ici
+      port: 8471
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: omni-v7x16-serving
+  namespace: default
+spec:
+  completionMode: Indexed
+  completions: 4
+  parallelism: 4
+  template:
+    metadata:
+      labels:
+        app: omni-v7x16-serving
+    spec:
+      subdomain: omni-v7x16-headless-svc
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-accelerator: tpu-v7x
+        cloud.google.com/tpu-topology: 2x2x4
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 700Gi
+        - name: models-cache
+          persistentVolumeClaim:
+            claimName: omni-models-pvc
+      containers:
+        - name: omni-v7x
+          image: YOUR_ARTIFACT_REGISTRY/vllm/vllm-torchtpu-omni:v0.32.0
+          securityContext:
+            privileged: true
+          env:
+            - name: TPU_MULTIHOST_BACKEND
+              value: "mp"
+            - name: TPU_SKIP_MDS_QUERY
+              value: "true"
+            - name: USE_MOE_FUSED_EP_KERNEL
+              value: "1"
+            - name: MULTIMODAL_CPU_OFFLOAD_URL
+              value: "http://multimodal-cpu-offload-svc.default.svc.cluster.local:8090"
+          resources:
+            requests:
+              google.com/tpu: "4"
+              memory: "720Gi"
+            limits:
+              google.com/tpu: "4"
+              memory: "780Gi"
+          volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
+            - name: models-cache
+              mountPath: /models
+          command: ["bash", "-lc"]
+          args:
+            - |
+              python3 /workspace/scripts/run_ming_qwen3_omni_v7x_bench.py \
+                --mode=stage-shm --models-root=/models/models --shm-root=/dev/shm/omni_models
+              exec python3 /workspace/scripts/run_ming_qwen3_omni_v7x_bench.py \
+                --mode=host-agent --host-rank="${JOB_COMPLETION_INDEX}" \
+                --agent-port=19120 --shm-root=/dev/shm/omni_models

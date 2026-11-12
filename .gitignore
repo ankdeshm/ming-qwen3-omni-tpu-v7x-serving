@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+.env
+*.mp4
+*.pt
+*.pth
+*.safetensors
+*.pyc

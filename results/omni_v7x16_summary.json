@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-11-04T20:14:20Z",
+  "accelerator": "Cloud TPU v7x (Ironwood)",
+  "slice_topology": "2x2x4 (4 hosts x 4 chips = 16 physical v7x chips = 32 TensorCores, 3,072 GiB HBM3e)",
+  "multimodal_cpu_offload_health": {
+    "status": "ok",
+    "hostname": "multimodal-cpu-offload-svc",
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8481C CPU @ 2.70GHz",
+    "vcpus": 44,
+    "avg_video_fps": 259.1,
+    "video_jobs": 5,
+    "video_frames": 429,
+    "video_encode_s": 1.656,
+    "image_jobs": 115,
+    "images_encoded": 115,
+    "image_encode_s": 26.146,
+    "audio_jobs": 52,
+    "audio_seconds_encoded": 368.0,
+    "audio_encode_s": 0.011,
+    "vision_preproc_jobs": 982,
+    "vision_cams_processed": 2158,
+    "vision_preproc_s": 7.013
+  },
+  "cpu_offload_microbench_ablation": {
+    "vision_2cam_preproc": {
+      "offload_ok": true,
+      "local_cpu_preproc_ms": 7.02,
+      "disagg_cpu_rtt_ms": 32.76,
+      "disagg_cpu_preproc_ms": 5.61,
+      "encoder_host": "multimodal-cpu-offload-svc",
+      "cpu_offload_speedup_x": 0.21
+    },
+    "audio_4s_wav_encode": {
+      "offload_ok": true,
+      "local_cpu_wav_ms": 0.264,
+      "disagg_cpu_rtt_ms": 0.782,
+      "disagg_cpu_encode_ms": 0.205,
+      "encoder_host": "multimodal-cpu-offload-svc"
+    },
+    "image_1024_png_encode": {
+      "offload_ok": true,
+      "local_cpu_png_ms": 161.26,
+      "disagg_cpu_rtt_ms": 142.36,
+      "disagg_cpu_encode_ms": 140.49,
+      "disagg_images_per_s": 7.1,
+      "encoder_host": "multimodal-cpu-offload-svc",
+      "cpu_offload_speedup_x": 1.13
+    }
+  },
+  "max_duplex_voice_video_sessions_per_16chip_slice": {
+    "Ming-flash-omni-2.0": {
+      "model": "inclusionAI/Ming-flash-omni-2.0",
+      "optimal_sharding": "DP=8 x EP=4 (32 TC, FP8)",
+      "supports_streaming_speech": true,
+      "max_duplex_sessions_ttfa_lt_150ms": 64,
+      "max_duplex_sessions_ttfa_lt_250ms": 64
+    },
+    "Qwen3-Omni-30B-A3B-Thinking": {
+      "model": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
+      "optimal_sharding": "DP=16 x EP=2 (32 TC, FP8)",
+      "supports_streaming_speech": false,
+      "max_duplex_sessions_ttfa_lt_150ms": "N/A (Thinker-Only)",
+      "max_duplex_sessions_ttfa_lt_250ms": "N/A (Thinker-Only)"
+    },
+    "Qwen3-Omni-30B-A3B-Instruct": {
+      "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "optimal_sharding": "DP=16 x EP=2 (32 TC, FP8)",
+      "supports_streaming_speech": true,
+      "max_duplex_sessions_ttfa_lt_150ms": 64,
+      "max_duplex_sessions_ttfa_lt_250ms": 64
+    }
+  },
+  "diagnostics_count": 1,
+  "counts": {
+    "suite_a_vllm_rows": 54,
+    "suite_b_duplex_rows": 44,
+    "total_verified_rows": 98
+  }
+}
